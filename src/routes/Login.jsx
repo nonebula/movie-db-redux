@@ -2,14 +2,17 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import styles from "../styles/Login.module.css";
+import { useDispatch } from "react-redux";
 
 const Login = () => {
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    dispatch(setUser({ name, password }));
     navigate("/");
     setName("");
     setPassword("");
@@ -31,7 +34,7 @@ const Login = () => {
         <div className={styles.inputWrapper}>
           <label htmlFor="password">Password</label>
           <input
-            type="text"
+            type="password"
             id="name"
             required
             value={password}

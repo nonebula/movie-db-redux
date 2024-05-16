@@ -7,6 +7,8 @@ import Movies from "./routes/Movies";
 import MovieDetail from "./routes/MovieDetail";
 import Login from "./routes/Login";
 import ErrorPage from "./components/ErrorPage";
+import { Provider } from "react-redux";
+import store from "./app/store";
 
 //nested route structure, all pages on top of movies page, root is directing all routes
 const router = createBrowserRouter([
@@ -31,5 +33,7 @@ const router = createBrowserRouter([
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <RouterProvider router={router} />
+  <Provider store={store}>
+    <RouterProvider router={router} />
+  </Provider>
 );
