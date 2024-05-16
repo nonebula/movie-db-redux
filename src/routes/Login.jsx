@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import styles from "../styles/Login.module.css";
 import { useDispatch } from "react-redux";
+import { setUser } from "../features/authSlice";
 
 const Login = () => {
   const [name, setName] = useState("");
@@ -35,7 +36,7 @@ const Login = () => {
           <label htmlFor="password">Password</label>
           <input
             type="password"
-            id="name"
+            id="password"
             required
             value={password}
             onChange={(e) => setPassword(e.target.value)}

@@ -8,7 +8,9 @@ const Navbar = () => {
   return (
     <nav>
       <ul className={styles.navWrapper}>
-        {user?.name && <li>Welcome {user.name}</li>}
+        {user?.name && (
+          <li className={styles.namePopup}>Welcome, {user.name}!</li>
+        )}
         <li>
           <NavLink to={"/"}>Movies</NavLink>
         </li>
