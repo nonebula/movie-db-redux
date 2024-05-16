@@ -2,16 +2,20 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import Root from "./routes/Root";
+import Movies from "./routes/Movies";
+import MovieDetail from "./routes/MovieDetail";
+import Login from "./routes/Login";
+import ErrorPage from "./components/ErrorPage";
 
-//nested route structure
+//nested route structure, all pages on top of movies page, root is directing all routes
 const router = createBrowserRouter([
   {
-    path: "/",
     element: <Root />,
     errorElement: <ErrorPage />,
     children: [
       {
-        path: "movies",
+        path: "/",
         element: <Movies />,
       },
       {
