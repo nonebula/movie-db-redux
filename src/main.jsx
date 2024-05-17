@@ -8,6 +8,7 @@ import Login from "./routes/Login";
 import ErrorPage from "./components/ErrorPage";
 import { Provider } from "react-redux";
 import store from "./app/store";
+import Search from "./routes/Search";
 
 //nested route structure, all pages on top of movies page, root is directing all routes
 const router = createBrowserRouter([
@@ -18,6 +19,10 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Movies />,
+      },
+      {
+        path: "/search/:searchTerm",
+        element: <Search />,
       },
       {
         path: "login",

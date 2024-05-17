@@ -32,3 +32,24 @@ export const getVote = (vote) => {
     return "red";
   }
 };
+
+export const searchMovie = async (query) => {
+  const apiKey = import.meta.env.VITE_APP_API_KEY;
+  const SEARCH_API = 'https://api.themoviedb.org/3/search/movie';
+
+  try {
+    const response = await axios.get(SEARCH_API, {
+      params: {
+        query: query,
+        include_adult: true,
+        language: 'en-US',
+        page: 1,
+        api_key: apiKey
+      }
+    });
+    return response.data.results;
+  } catch (error) {
+    console.error('Error searching for movies:', error);
+    throw error;
+  }
+};

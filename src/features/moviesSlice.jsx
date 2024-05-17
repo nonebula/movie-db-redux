@@ -9,7 +9,7 @@ const initialState = {
 
 export const fetchMovies = createAsyncThunk("movies/fetchMovies", async () => {
   const response = await getMovies();
-  return response.results; // Return the results array directly
+  return response.results; 
 });
 
 const moviesSlice = createSlice({
