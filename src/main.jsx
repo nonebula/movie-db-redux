@@ -3,7 +3,7 @@ import "./index.css";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Root from "./routes/Root";
 import Movies from "./routes/Movies";
-import MovieDetail from "./routes/MovieDetail";
+import MovieDetail, { loader as detailLoader } from "./routes/MovieDetail";
 import Login from "./routes/Login";
 import ErrorPage from "./components/ErrorPage";
 import { Provider } from "react-redux";
@@ -26,6 +26,7 @@ const router = createBrowserRouter([
       {
         path: "/:id",
         element: <MovieDetail />,
+        loader: detailLoader,
       },
     ],
   },
