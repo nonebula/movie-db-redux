@@ -20,30 +20,30 @@ const MovieDetail = () => {
   } = data;
   return (
     <div className={styles.detailWrapper}>
-      <h1>{title}</h1>
+      <h1 className={styles.title}>{title}</h1>
       <div className={styles.bottomWrapper}>
         <div className={styles.posterWrapper}>
           <img src={IMG_API + poster_path} alt={title} />
         </div>
         <ul className={styles.ul}>
-          <li>
-            <span>Overview:</span>
+          <li className={styles.information}>
+            <span className={styles.pretext}>Overview:</span>
             {overview}
           </li>
-          <li>
-            <span>Name:</span>
+          <li className={styles.information}>
+            <span className={styles.pretext}>Name:</span>
             {title}
           </li>
-          <li>
-            <span>Release Date:</span>
+          <li className={styles.information}>
+            <span className={styles.pretext}>Release Date:</span>
             {release_date}
           </li>
-          <li>
-            <span>Rating:</span>
+          <li className={styles.information}>
+            <span className={styles.pretext}>Rating:</span>
             {vote_average}
           </li>
-          <li>
-            <span>Vote Count:</span>
+          <li className={styles.information}>
+            <span className={styles.pretext}>Vote Count:</span>
             {vote_count}
           </li>
         </ul>

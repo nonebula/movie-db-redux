@@ -22,3 +22,22 @@
   flex-direction: column;
   justify-content: space-around;
 }
+
+.title {
+  margin-top: 30px;
+  font-size: 4rem;
+  color: cadetblue;
+  text-align: center;
+}
+
+.pretext {
+  font-size: 1.5rem;
+  padding: 10px;
+  font-weight: 700;
+  color: cadetblue;
+}
+
+.information {
+  font-size: 1.3rem;
+  padding: 10px;
+}
