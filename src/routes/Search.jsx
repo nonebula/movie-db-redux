@@ -10,7 +10,7 @@ const Movies = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { movieList, loading, error } = useSelector((state) => state.movies);
-  const { searchResults } = useSelector((state) => state.search); // Access search results from Redux store
+  const { searchResults } = useSelector((state) => state.search); 
   const IMG_API = "https://image.tmdb.org/t/p/w1280";
 
   useEffect(() => {
@@ -25,11 +25,10 @@ const Movies = () => {
     <div className={styles.mainWrapper}>
       {error && <h1>{error}</h1>}
       {loading && <Loading />}
-      {!loading && (searchResults.length > 0 || movieList.length > 0) ? ( // Check if searchResults or movieList has items
+      {!loading && (searchResults.length > 0 || movieList.length > 0) ? ( 
         <div className={styles.moviesWrapper}>
           {(searchResults.length > 0 ? searchResults : movieList).map(
             (movie) => {
-              // Use searchResults if available, otherwise use movieList
               const { id, title, vote_average, poster_path } = movie;
               return (
                 <div

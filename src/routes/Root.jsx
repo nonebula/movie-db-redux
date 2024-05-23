@@ -10,6 +10,6 @@ const Root = () => {
   );
 };
 
-//outlet must be used whereever we want to render the nested routes
+//outlet must be used wherever we want to render the nested routes
 
 export default Root;
